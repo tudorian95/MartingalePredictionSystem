@@ -14,7 +14,7 @@ func roll() int {
 }
 
 func dice1(x int) int {
-	bankroll := 2000
+	bankroll := 100
 	bet := 1
 	for i := 0; i < x; i++ {
 		result := roll()
@@ -28,7 +28,7 @@ func dice1(x int) int {
 }
 
 func dice2(x int) int {
-	bankroll := 2000
+	bankroll := 100
 	bet := 1
 	for i := 0; i < x; i++ {
 		result := roll()
@@ -40,7 +40,7 @@ func dice2(x int) int {
 			bankroll -= bet
 			reroll := roll()
 			if reroll >= 51 {
-				bankroll += bet
+				bankroll += 2 * bet
 				bet = 1
 			} else {
 				bet = 1
@@ -51,7 +51,7 @@ func dice2(x int) int {
 }
 
 func dice3(x int) int {
-	bankroll := 2000
+	bankroll := 100
 	bet := 1
 	for i := 0; i < x; i++ {
 		result := roll()
@@ -82,7 +82,7 @@ func dice3(x int) int {
 }
 
 func dice4(x int) int {
-	bankroll := 2000
+	bankroll := 100
 	bet := 1
 	for i := 0; i < x; i++ {
 		result := roll()
@@ -121,7 +121,7 @@ func dice4(x int) int {
 }
 
 func dice5(x int) int {
-	bankroll := 2000
+	bankroll := 100
 	bet := 1
 	for i := 0; i < x; i++ {
 		result := roll()
@@ -168,11 +168,11 @@ func dice5(x int) int {
 }
 
 func main() {
-	x := dice1(10000)
-	y := dice2(10000)
-	z := dice3(10000)
-	a := dice4(10000)
-	b := dice5(10000)
+	x := dice1(100000)
+	y := dice2(100000)
+	z := dice3(100000)
+	a := dice4(100000)
+	b := dice5(100000)
 	fmt.Println("using a 1 step Martingale we get")
 	fmt.Println(x)
 	fmt.Println("using a 2 step Martingale we get")
