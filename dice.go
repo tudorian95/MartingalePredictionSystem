@@ -37,6 +37,7 @@ func dice2(x int) int {
 		} else {
 			bankroll -= bet
 			bet *= 2
+			bankroll -= bet
 			reroll := roll()
 			if reroll >= 51 {
 				bankroll += bet
@@ -58,7 +59,6 @@ func dice3(x int) int {
 		if result >= 51 {
 			bankroll += bet
 		} else {
-			bankroll -= bet
 			bet *= 2
 			bankroll -= bet
 			reroll := roll()
@@ -66,7 +66,6 @@ func dice3(x int) int {
 				bankroll += 2 * bet
 				bet = 1
 			} else {
-				bankroll -= bet
 				bet *= 2
 				bankroll -= bet
 				reroll2 := roll()
@@ -90,7 +89,6 @@ func dice4(x int) int {
 		if result >= 51 {
 			bankroll += bet
 		} else {
-			bankroll -= bet
 			bet *= 2
 			bankroll -= bet
 			reroll := roll()
@@ -98,7 +96,6 @@ func dice4(x int) int {
 				bankroll += 2 * bet
 				bet = 1
 			} else {
-				bankroll -= bet
 				bet *= 2
 				bankroll -= bet
 				reroll2 := roll()
@@ -106,7 +103,6 @@ func dice4(x int) int {
 					bankroll += 2 * bet
 					bet = 1
 				} else {
-					bankroll -= bet
 					bet *= 2
 					bankroll -= bet
 					reroll3 := roll()
@@ -139,7 +135,6 @@ func dice5(x int) int {
 				bankroll += 2 * bet
 				bet = 1
 			} else {
-				bankroll -= bet
 				bet *= 2
 				bankroll -= bet
 				reroll2 := roll()
@@ -147,7 +142,6 @@ func dice5(x int) int {
 					bankroll += 2 * bet
 					bet = 1
 				} else {
-					bankroll -= bet
 					bet *= 2
 					bankroll -= bet
 					reroll3 := roll()
@@ -155,7 +149,6 @@ func dice5(x int) int {
 						bankroll += 2 * bet
 						bet = 1
 					} else {
-						bankroll -= bet
 						bet *= 2
 						bankroll -= bet
 						reroll4 := roll()
