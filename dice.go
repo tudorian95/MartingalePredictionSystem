@@ -43,7 +43,6 @@ func dice2(x int) int {
 				bankroll += bet
 				bet = 1
 			} else {
-				bankroll -= bet
 				bet = 1
 			}
 		}
@@ -59,6 +58,7 @@ func dice3(x int) int {
 		if result >= 51 {
 			bankroll += bet
 		} else {
+			bankroll -= bet
 			bet *= 2
 			bankroll -= bet
 			reroll := roll()
@@ -89,6 +89,7 @@ func dice4(x int) int {
 		if result >= 51 {
 			bankroll += bet
 		} else {
+			bankroll -= bet
 			bet *= 2
 			bankroll -= bet
 			reroll := roll()
@@ -182,11 +183,4 @@ func main() {
 	fmt.Println(a)
 	fmt.Println("using a 5 step Martingale we get")
 	fmt.Println(b)
-	/*	for i := 0; i < 1000; i++ {
-			fmt.Println(roll())
-		}
-	*/
 }
-
-//pana la 51 inclusiv ai 52 de variante
-// de la 52 pana la 100 ai 49 de variante
