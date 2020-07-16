@@ -34,7 +34,6 @@ func dice2(x int) int {
 		result := roll()
 		if result >= 51 {
 			bankroll += bet
-			bet = 1
 		} else {
 			bankroll -= bet
 			bet *= 2
