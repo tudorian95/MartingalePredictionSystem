@@ -58,23 +58,23 @@ func dice3(x int) int {
 		result := roll()
 		if result >= 51 {
 			bankroll += bet
-			bet = 1
 		} else {
 			bankroll -= bet
 			bet *= 2
+			bankroll -= bet
 			reroll := roll()
 			if reroll >= 51 {
-				bankroll += bet
+				bankroll += 2 * bet
 				bet = 1
 			} else {
 				bankroll -= bet
 				bet *= 2
+				bankroll -= bet
 				reroll2 := roll()
 				if reroll2 >= 51 {
-					bankroll += bet
+					bankroll += 2 * bet
 					bet = 1
 				} else {
-					bankroll -= bet
 					bet = 1
 				}
 			}
@@ -90,30 +90,31 @@ func dice4(x int) int {
 		result := roll()
 		if result >= 51 {
 			bankroll += bet
-			bet = 1
 		} else {
 			bankroll -= bet
 			bet *= 2
+			bankroll -= bet
 			reroll := roll()
 			if reroll >= 51 {
-				bankroll += bet
+				bankroll += 2 * bet
 				bet = 1
 			} else {
 				bankroll -= bet
 				bet *= 2
+				bankroll -= bet
 				reroll2 := roll()
 				if reroll2 >= 51 {
-					bankroll += bet
+					bankroll += 2 * bet
 					bet = 1
 				} else {
 					bankroll -= bet
 					bet *= 2
+					bankroll -= bet
 					reroll3 := roll()
 					if reroll3 >= 51 {
-						bankroll += bet
+						bankroll += 2 * bet
 						bet = 1
 					} else {
-						bankroll -= bet
 						bet = 1
 					}
 				}
@@ -130,37 +131,39 @@ func dice5(x int) int {
 		result := roll()
 		if result >= 51 {
 			bankroll += bet
-			bet = 1
 		} else {
 			bankroll -= bet
 			bet *= 2
+			bankroll -= bet
 			reroll := roll()
 			if reroll >= 51 {
-				bankroll += bet
+				bankroll += 2 * bet
 				bet = 1
 			} else {
 				bankroll -= bet
 				bet *= 2
+				bankroll -= bet
 				reroll2 := roll()
 				if reroll2 >= 51 {
-					bankroll += bet
+					bankroll += 2 * bet
 					bet = 1
 				} else {
 					bankroll -= bet
 					bet *= 2
+					bankroll -= bet
 					reroll3 := roll()
 					if reroll3 >= 51 {
-						bankroll += bet
+						bankroll += 2 * bet
 						bet = 1
 					} else {
 						bankroll -= bet
 						bet *= 2
+						bankroll -= bet
 						reroll4 := roll()
 						if reroll4 >= 51 {
-							bankroll += bet
+							bankroll += 2 * bet
 							bet = 1
 						} else {
-							bankroll -= bet
 							bet = 1
 						}
 					}
@@ -172,11 +175,11 @@ func dice5(x int) int {
 }
 
 func main() {
-	x := dice1(100000)
-	y := dice2(100000)
-	z := dice3(100000)
-	a := dice4(100000)
-	b := dice5(100000)
+	x := dice1(10000)
+	y := dice2(10000)
+	z := dice3(10000)
+	a := dice4(10000)
+	b := dice5(10000)
 	fmt.Println("using a 1 step Martingale we get")
 	fmt.Println(x)
 	fmt.Println("using a 2 step Martingale we get")
